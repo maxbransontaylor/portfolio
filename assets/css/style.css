@@ -1,0 +1,61 @@
+:root {
+    --primary-color: ;
+    --secondary-color: rgb(83, 178, 233);
+    --tertiary-color: rgb(44, 42, 49);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(215, 216, 224);
+    font-family: Verdana, Tahoma, sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* begin header styles */
+header {
+    padding: 20px 0;
+    background: var(--tertiary-color);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-width: 100%;
+}
+
+header h1 {
+    display: flex;
+    color: var(--tertiary-color);
+    background: var(--secondary-color);
+    align-items: center;
+    margin: 0;
+    padding: 0 10px 0 35px;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+
+
+}
+
+header nav ul li {
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--secondary-color);
+    margin: 10px 30px;
+    padding: 3px;
+    font-size: 20px;
+    white-space: nowrap;
+}
