@@ -2,6 +2,9 @@
     --primary-color: rgb(56, 64, 138);
     --secondary-color: rgb(83, 178, 233);
     --tertiary-color: rgb(44, 42, 49);
+    --secondary-color-alpha: rgba(83, 178, 233, .3);
+    --secondary-color-hover: rgba(83, 178, 233, 0);
+    --background-color: rgb(215, 216, 224);
 }
 
 * {
@@ -11,7 +14,7 @@
 }
 
 body {
-    background-color: rgb(215, 216, 224);
+    background-color: var(--background-color);
     font-family: Arial, Helvetica, sans-serif;
 
 }
@@ -61,6 +64,22 @@ header nav ul li {
     white-space: nowrap;
 }
 
+/* animation effect when li items are hovered */
+header nav ul li {
+    box-shadow: inset 0 -3px 0 -1px var(--secondary-color);
+    transition: box-shadow .15s ease-in-out, color .15s;
+    line-height: 40px;
+}
+
+header nav ul li:hover {
+    box-shadow: inset 0 -40px 0 -1px var(--secondary-color);
+    color: var(--tertiary-color);
+}
+
+/* citation for the above code:
+Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Stack Overflow. https://stackoverflow.com/a/51562411/19243922
+ */
+
 /* end header styles */
 /* begin hero styles */
 .hero {
@@ -101,7 +120,7 @@ header nav ul li {
     border-right: 5px var(--primary-color) solid;
     padding-right: 10px;
     margin-right: 30px;
-    flex: 0 0 25%;
+    flex: 0 0 30%;
 }
 
 .about p {
@@ -124,9 +143,29 @@ header nav ul li {
     display: flex;
     border: 5px solid var(--secondary-color);
     flex: 1 0 calc(50% - 1vw);
-    background-image: url(../images/stock.jpg);
+    position: relative;
+    background-color: var(--secondary-color-alpha);
     height: 10vw;
     margin: .5vw;
+    transition: background-color .5s;
+}
+
+/* adding effect to project images when hovered */
+.project-item::before {
+    content: "";
+    background-image: url(../images/stock.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: -1;
+}
+
+.project-item:hover {
+    background-color: var(--secondary-color-hover);
 }
 
 
@@ -138,6 +177,7 @@ header nav ul li {
 
 
 .project-title {
+    position: relative;
     align-self: flex-end;
     color: var(--tertiary-color);
     background: var(--secondary-color);
@@ -152,7 +192,7 @@ header nav ul li {
     list-style: none;
     flex: 70%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -162,5 +202,27 @@ header nav ul li {
     font-size: 20px;
     font-weight: bold;
     border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 2px;
+
 }
+
+.contact ul li a {
+    padding: 0 5px;
+
+}
+
+/* animation effect when li items are hovered */
+.contact ul li {
+    box-shadow: inset 0 -3px 0 -1px var(--primary-color);
+    transition: box-shadow .15s ease-in-out, color .15s;
+
+    line-height: 40px;
+}
+
+.contact ul li:hover {
+    box-shadow: inset 0 -40px 0 -1px var(--primary-color);
+    color: var(--background-color);
+}
+
+/* citation for the above code:
+Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Stack Overflow. https://stackoverflow.com/a/51562411/19243922
+ */
