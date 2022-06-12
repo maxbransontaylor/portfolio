@@ -35,10 +35,10 @@ header {
 }
 
 header h1 {
-    display: flex;
+
     color: var(--tertiary-color);
     background: var(--secondary-color);
-    align-items: center;
+
     margin: 0;
     padding: 0 10px 0 35px;
 }
@@ -50,17 +50,15 @@ header nav ul {
     align-items: center;
     list-style: none;
     flex-wrap: wrap;
-
-
 }
 
 header nav ul li {
     color: var(--secondary-color);
-    border-bottom: 3px solid var(--secondary-color);
+
     margin: 10px 30px;
     padding: 3px;
     font-size: 20px;
-    font-weight: bold;
+
     white-space: nowrap;
 }
 
@@ -121,6 +119,7 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
     padding-right: 10px;
     margin-right: 30px;
     flex: 0 0 30%;
+    max-width: 30%;
 }
 
 .about p {
@@ -181,7 +180,7 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
     align-self: flex-end;
     color: var(--tertiary-color);
     background: var(--secondary-color);
-    margin-bottom: 15px;
+    margin-bottom: 1vw;
     padding: 5px 10px;
     min-height: 0;
 }
@@ -198,10 +197,10 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
 }
 
 .contact ul li {
-    color: var(--primary-color);
+    color: black;
     font-size: 20px;
     font-weight: bold;
-    border-bottom: 3px solid var(--primary-color);
+
 
 }
 
@@ -226,3 +225,69 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
 /* citation for the above code:
 Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Stack Overflow. https://stackoverflow.com/a/51562411/19243922
  */
+/* begin styles for first break point */
+@media screen and (max-width:850px) {
+    .section-header {
+        text-align: left;
+        border-right: none;
+        border-bottom: 3px var(--primary-color) solid;
+        flex: 1 0 100%;
+        max-width: 100%;
+        margin: 20px 0;
+        font-size: 36px;
+    }
+
+    .project,
+    .about,
+    .contact {
+        flex-direction: column;
+
+        padding: 5vw;
+    }
+}
+
+@media screen and (max-width:710px) {
+    .contact ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+
+
+
+    .project-title {
+        font-size: 12px;
+    }
+}
+
+/* begin styles for mobile and smaller */
+@media screen and (max-width:575px) {
+    header {
+        padding: 0;
+        justify-content: center;
+    }
+
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul li {
+        margin: 5px;
+        text-align: center;
+        font-size: 16px;
+        padding-bottom: 0px;
+    }
+
+    .project-item,
+    .project-item:first-child {
+        flex: 1 0 100%;
+        height: 20vw;
+        align-items: center;
+    }
+
+    .contact ul li {
+        font-size: 16px;
+    }
+}
