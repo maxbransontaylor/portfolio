@@ -85,8 +85,9 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
     display: flex;
     background-image: url(../images/placeholder.jpg);
     background-size: cover;
+
     height: 30vw;
-    background-position-y: -9vw;
+    background-position-y: -23vw;
     align-items: flex-end;
     justify-content: end;
 
@@ -153,7 +154,6 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
 /* adding effect to project images when hovered */
 .project-item::before {
     content: "";
-    background-image: url(../images/stock.jpg);
     background-size: cover;
     position: absolute;
     top: 0;
@@ -164,10 +164,22 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
     z-index: -1;
 }
 
+.run-buddy::before {
+    background-image: url(../images/runbuddy.png);
+}
+
+.surf-report::before,
+.led-wall::before,
+.pastel-puzzels::before,
+.calculator::before {
+    background-image: url(../images/stock.jpg);
+}
+
 .project-item:hover {
     background-color: var(--secondary-color-hover);
 }
 
+/* end hover style */
 
 .project-item:first-child {
     flex: 100%;
@@ -247,6 +259,7 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
     }
 }
 
+/* end first break point, begin second break point */
 @media screen and (max-width:710px) {
     .contact ul {
         flex-direction: column;
@@ -262,6 +275,7 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
     }
 }
 
+/* end second break point */
 /* begin styles for mobile and smaller */
 @media screen and (max-width:590px) {
     header {
