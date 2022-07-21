@@ -164,8 +164,8 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
     z-index: -1;
 }
 
-.run-buddy::before {
-    background-image: url(../images/runbuddy.png);
+.genre-buddy::before {
+    background-image: url(../images/Capture.PNG);
 }
 
 .surf-report::before,
