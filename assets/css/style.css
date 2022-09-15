@@ -167,7 +167,9 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
 .genre-buddy::before {
     background-image: url(../images/Capture.PNG);
 }
-
+.gift-pilot::before {
+    background-image: url(../images/giftpilot.PNG);
+}
 .surf-report::before,
 .led-wall::before,
 .pastel-puzzels::before,
