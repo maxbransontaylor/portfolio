@@ -33,7 +33,11 @@ header {
     align-items: center;
     flex-wrap: wrap;
     min-width: 100%;
+    position: fixed;
+    z-index: 1;
 }
+
+#spacer {}
 
 header h1 {
 
@@ -65,19 +69,18 @@ header nav ul li {
 
 /* animation effect when li items are hovered */
 header nav ul li {
-    box-shadow: inset 0 -3px 0 -1px var(--secondary-color);
+
     transition: box-shadow .15s ease-in-out, color .15s;
     line-height: 40px;
+    padding: 0 5px;
+    border-radius: 10px;
 }
 
 header nav ul li:hover {
-    box-shadow: inset 0 -40px 0 -1px var(--secondary-color);
+    box-shadow: inset 0 -40px 0 0 var(--secondary-color);
     color: var(--tertiary-color);
 }
 
-/* citation for the above code:
-Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Stack Overflow. https://stackoverflow.com/a/51562411/19243922
- */
 
 /* end header styles */
 /* begin hero styles */
@@ -86,8 +89,8 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
     background-image: url(../images/placeholder.jpg);
     background-size: cover;
 
-    height: 30vw;
-    background-position-y: -23vw;
+    height: 50vw;
+    background-position-y: -3vw;
     align-items: flex-end;
     justify-content: end;
 
@@ -167,9 +170,11 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
 .genre-buddy::before {
     background-image: url(../images/Capture.PNG);
 }
+
 .gift-pilot::before {
     background-image: url(../images/giftpilot.PNG);
 }
+
 .surf-report::before,
 .led-wall::before,
 .pastel-puzzels::before,
@@ -302,6 +307,15 @@ Kosh. (2019, June 17). "CSS: Background fills on hover from bottom to top:". Sta
         flex: 1 0 100%;
         height: 20vw;
         align-items: center;
+    }
+
+    .contact {
+        justify-content: center;
+    }
+
+    .section-header {
+        max-width: 100%;
+        text-align: center;
     }
 
     .contact ul li {
