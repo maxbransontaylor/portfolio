@@ -37,7 +37,9 @@ header {
     z-index: 1;
 }
 
-#spacer {}
+html {
+    scroll-padding-top: 5vw;
+  }
 
 header h1 {
 
@@ -89,8 +91,8 @@ header nav ul li:hover {
     background-image: url(../images/placeholder.jpg);
     background-size: cover;
 
-    height: 50vw;
-    background-position-y: -3vw;
+    height: 41vw;
+    background-position-y: -13vw;
     align-items: flex-end;
     justify-content: end;
 
